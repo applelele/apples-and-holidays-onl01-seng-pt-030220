@@ -70,11 +70,14 @@ def all_supplies_in_holidays(holiday_hash)
     data.each do |event, item|
       if event.include?("_")
       array_event = event.split("_")
-      
-      cap = array_event.collect {|letter| letter.to_s.capitalize!}
+      array_cap = array_event.collect {|letter| letter.to_s.capitalize!}
+      cap = array_cap.join(" ")
+    else
+      cap = event.to_s.capitalize!
+    end
       all_items = []
       item.each {|one| all_items << one}
-      puts "  #{cap.join(" ")}: #{all_items.join(", ")}" 
+      puts "  #{cap}: #{all_items.join(", ")}" 
     end
   end
 end
