@@ -71,9 +71,9 @@ def all_supplies_in_holidays(holiday_hash)
       array_event_name = event.to_s.split(" ")
       cap = array_event_name.collect {|letter| letter.capitalize!}
       cap.join(" ")
-      all_items = ""
-      item.each {|one| all_items << one}
-      puts "  #{cap.join(" ")}: #{all_items}" 
+      all_items = []
+      array_item = item.each {|one| all_items << one}
+      puts "  #{cap.join(" ")}: #{all_items.join(", "}" 
     end
   end
 
